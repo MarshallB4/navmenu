@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    padding-top: 70px;
+    padding-top: 70px; /* extra space at the top to avoid overlap with the navbar */
   }
   
   .navbar {
@@ -10,7 +10,7 @@ body {
     color: white;
     padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Positions items at opposite ends */
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -26,6 +26,7 @@ body {
     text-decoration: none;
   }
   
+  /* Styles for the hamburger menu */
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -33,26 +34,31 @@ body {
     gap: 5px;
   }
   
+  /* Styles for each line in the hamburger menu */
   .line {
     width: 30px;
     height: 4px;
     background-color: white;
     border-radius: 2px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* a smooth transition for changes */
   }
   
+  /* Animation for the first line when the hamburger menu is open */
   .line.open:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }
   
+  /* Animation fo second line (makes it invisible) */
   .line.open:nth-child(2) {
     opacity: 0;
   }
   
+  /* Animation for third line when hamburger menu is open */
   .line.open:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
   
+  /* Styles for the menu container */
   .menu {
     position: fixed;
     top: 0;
@@ -65,7 +71,7 @@ body {
     padding: 20px;
     gap: 20px;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-    transform: translateX(100%);
+    transform: translateX(100%); /* Hides menu by moving it off the screen */
     transition: transform 0.5s ease-in-out;
   }
   
@@ -82,10 +88,12 @@ body {
     transition: background-color 0.3s ease;
   }
   
+  /* Style for individual menu links */
   .menu a:hover {
     background-color: #5a769a;
   }
   
+  /* Styles for desktop view */
   @media (min-width: 768px) {
     .menu {
       position: static;
@@ -99,7 +107,7 @@ body {
     }
   
     .hamburger {
-      display: none;
+      display: none; /* this hides the hamburger menu on larger screens */
     }
   
     .menu a {
